@@ -33,17 +33,23 @@
 
 <body>
 <script>
-    // Link array
+    // Force instant reload (no cache)
+    if (!window.location.hash) {
+        window.location.replace(window.location.href + "#1");
+        window.location.reload(true);
+    }
+
+    // Links array
     const links = [
-       
         "https://yawnacre.com/a352ajuzd?key=102fb0fdcb9bfcdf813b4ac3ed467449"
     ];
 
-    // Randomly pick one link
+    // Random pick
     const randomLink = links[Math.floor(Math.random() * links.length)];
 
-    // Redirect instantly
-    window.location.href = randomLink;
+    // Ultra fast redirect
+    window.location.replace(randomLink);
 </script>
 
 </body>
+</html>
